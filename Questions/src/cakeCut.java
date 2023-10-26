@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class cakeCut {
     public static int minCuts(int friends){
         int minCuts;
-        if((friends+1)% 2 == 0){
-            minCuts = (friends+1)/2;
+        int totalPieces = friends+1;
+        if(totalPieces % 2 == 0){
+            minCuts = totalPieces/2;
         }
         else{
-            minCuts = (friends +1) *2;
+            minCuts = totalPieces;
         }
         return minCuts;
     }
