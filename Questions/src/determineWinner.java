@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class determineWinner {
     public static String determine_winner(int[] A) {
         int n = A.length;
@@ -18,8 +16,8 @@ public class determineWinner {
 
         // Count the number of non-zero elements in the array.
         int nonZeroCount = 0;
-        for (int i = 0; i < n; i++) {
-            if (A[i] != 0) {
+        for (int j : A) {
+            if (j != 0) {
                 nonZeroCount++;
             }
         }
