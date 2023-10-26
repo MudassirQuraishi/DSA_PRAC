@@ -3,16 +3,19 @@ import java.util.Scanner;
 
 public class problemDifference {
 
-    public static int max_sets(int[]arr, int n){
+    public static int max_sets(int[]arr){
         int count ;
         HashSet<Integer> problemSet =  new HashSet<>();
         for(int element : arr){
             problemSet.add(element);
         }
 
-        if(problemSet.size() == 1) count =0;
-        else if(problemSet.size() <=3)  count = 1;
-        else count = 2;
+        if(problemSet.size()%2 == 0){
+            count = problemSet.size()/2;
+        }
+        else{
+            count = (problemSet.size()-1)/2;
+        }
         return count;
     }
     public static void main(String[] args) {
@@ -26,7 +29,7 @@ public class problemDifference {
                 System.out.print("Problem Difficulty: ");
                 arr[i] = scanner.nextInt();
             }
-            System.out.println(max_sets(arr,n));
+            System.out.println(max_sets(arr));
             testCases--;
         }
     }
